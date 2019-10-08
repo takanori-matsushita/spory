@@ -1,0 +1,293 @@
+
+/*
+-------------------------------------------------*/
+html, body {
+    font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+.wrapper {
+    overflow: hidden;
+}
+
+.pagetop {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    font-size: 50px;
+    transition: all .5s ease;
+}
+
+.pagetop:hover {
+    position: fixed;
+    bottom: 30px;
+}
+
+/* ボタン */
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+   
+  /* ボタンを光らせる */
+.btn-shine:before {
+    /*光るアニメーション用*/
+    animation: shine 3s ease-in-out infinite;/*数字を変更することで光る間隔が変更*/
+    background-color: #fff;
+    content: " ";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: -180px;
+    transform: rotate(45deg);
+    width: 30px;
+  }
+   
+  @keyframes shine {
+    0% {
+      transform: scale(0) rotate(45deg);
+      opacity: 0;
+    }
+    80% {
+      transform: scale(0) rotate(45deg);
+      opacity: 0.5;
+    }
+    81% {
+      transform: scale(4) rotate(45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(50) rotate(45deg);
+      opacity: 0;
+    }
+  }
+
+/*  header
+-------------------------------------------------*/
+
+.scroll-nav {
+    background-color: rgba(0,0,0,0.7);
+    transition: background 1s ease;
+}
+
+.navbar-nav {
+    display: none;
+}
+
+.navbar-brand-center {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align:center;
+    margin: auto;
+}
+
+.top-image {
+    background-image: url(images/main-image.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.put-color {
+    background: #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+.catch-phrase {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.catch-phrase h1 {
+    white-space: nowrap;
+}
+
+.mouse {
+    position: absolute;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.mouse:hover {
+    animation: updown .5s infinite alternate;
+}
+
+.scroll-b {
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flash .8s infinite alternate;
+}
+
+.mb--10 {
+    margin-bottom: -10px;
+}
+
+@keyframes updown {
+    0% {
+    position: absolute;
+    bottom: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    100% {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+}
+
+@keyframes flash {
+    100% {
+        opacity: 1;
+    }
+    0% {
+        opacity: 0;
+    }
+}
+
+/*  footer
+-------------------------------------------------*/
+footer {
+    
+}
+
+.footer-nav {
+    padding: 50px 0;
+}
+
+.footer-nav ul li a {
+    transition: all .7s ease;
+}
+
+.footer-nav ul li a:hover {
+    transform: rotate(5deg);
+}
+
+.copy-light {
+    background-color: rgb(180,0,51);
+    padding: 15px 0;
+}
+
+.copy-light p {
+    margin: 0;
+}
+
+/*  main
+-------------------------------------------------*/
+.top-subtitle {
+    position: relative;
+    padding: 50px 0;
+  }
+
+.top-subtitle::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    display: inline-block;
+    width: 60px;/*線の長さ*/
+    height: 5px;/*線の太さ*/
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);/*位置調整*/
+    background-color: rgb(230,0,0);/*線の色*/
+    border-radius: 2px;/*線の丸み*/
+}
+
+/*  top-about
+-------------------------------------------------*/
+#top-about {
+    background-image: url(images/bg-about.png);
+}
+
+/*  top-merit
+-------------------------------------------------*/
+#top-merit {
+
+}
+
+/*  top-browsing
+-------------------------------------------------*/
+#top-browsing {
+
+}
+
+/*  top-faq
+-------------------------------------------------*/
+#top-faq {
+    background-image: url(images/bg-faq.png);
+}
+
+.faq::before {
+    content:'Q ';
+    color: #000080;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.answer::before {
+    content:'A ';
+    color: #cc0000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*  top-register
+-------------------------------------------------*/
+#top-register {
+
+}
+
+/* 575px以下	モバイル（縦向き） */
+@media (max-width: 575.98px) {
+    footer {
+        margin-bottom: 3em;
+    }
+
+    .catch-phrase h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* 576px 〜 767px　モバイル（横向き） */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    footer {
+        margin-bottom: 3em;
+    }
+
+    .catch-phrase h1 {
+        font-size: 2.1em;
+    }
+}
+
+/* 768px 〜 991px　タブレット */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    footer {
+        margin-bottom: 3em;
+    }
+}
+
+/* 992px 〜 1199px　PC */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+
+/* 1200px 以上　PC（大画面) */
+@media (min-width: 1200px) {
+
+}
